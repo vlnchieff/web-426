@@ -1,0 +1,31 @@
+body {
+  font-family: 'Nata Sans', sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+.top-nav, .bottom-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #333;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+}
+
+main {
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+footer {
+  margin-top: 40px;
+  background-color: #222;
+  color: white;
+  padding: 10px;
+}
