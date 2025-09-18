@@ -1,10 +1,10 @@
 import { HomeComponent } from './home/home.component';
 import { Routes } from '@angular/router';
-import { PlayersComponent } from './players/players';
-import { SigninComponent } from './signin/signin';
-import { CreateCharacterComponent } from './create-character/create-character';
-import { CreateGuildComponent } from './create-guild/create-guild';
-import { CharacterFactionComponent } from './character-faction/character-faction';
+import { PlayersComponent } from './players/players.component';
+import { SigninComponent } from './signin/signin.component';
+import { CreateCharacterComponent } from './create-character/create-character.component';
+import { CreateGuildComponent } from './create-guild/create-guild.component';
+import { CharacterFactionComponent } from './character-faction/character-faction.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },

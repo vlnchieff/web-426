@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-interface Character {
+export interface Character {
   name: string;
   gender: 'Male' | 'Female' | 'Other';
   class: 'Warrior' | 'Mage' | 'Rogue';
@@ -14,13 +14,58 @@ interface Character {
   selector: 'app-players',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './players.component.html',
-  styleUrls: ['./players.component.css']
+  template: `
+    <div class="players-wrapper">
+    <h1>Character Roster</h1>
+    <div class="grid">
+        @for (character of characters; track character.name) {
+        <div class="card" data-testid="character-card">
+            <h2>{{ character.name }}</h2>
+            <p>
+                <strong>Gender:</strong>
+                {{ character.gender }}</p>
+            <p>
+                <strong>Class:</strong>
+                {{ character.class }}</p>
+            <p>
+                <strong>Faction:</strong>
+                {{ character.faction }}</p>
+            <p>
+                <strong>Location:</strong>
+                {{ character.startingLocation }}</p>
+            <p>
+                <em>{{ character.funFact }}</em>
+            </p>
+        </div>
+        }
+    </div>
+</div>
+  `,
+  styles: `
+  .players-wrapper {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  flex: 0 1 calc(33.33% - 20px);
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}`
 })
 export class PlayersComponent {
   characters: Character[] = [
     {
-      name: 'Thorn',
+      name: 'Jackal Dundee',
       gender: 'Male',
       class: 'Warrior',
       faction: 'The Iron Brotherhood',
@@ -101,3 +146,4 @@ export class PlayersComponent {
     }
   ];
 }
+
